@@ -21,7 +21,7 @@ class App extends Component {
 
     submit() {
         const { notes, text } = this.state;
-        notes.push(text);
+        notes.push({ text });
         this.setState({ notes });
         bake_cookie(cookie_key, this.state.notes);
     }
@@ -43,7 +43,6 @@ class App extends Component {
                 {
                     this.state.notes.map((note, index) => {
                         return (
-                            // <div key={index}>{note}</div>
                             <Note key={index} note={note}/>
                         )
                     })
